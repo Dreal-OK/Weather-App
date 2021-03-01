@@ -1,0 +1,117 @@
+:root {
+  --primary-color: #690998;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DotGothic16', sans-serif;
+  background-color: #fff;
+}
+
+.brand {
+  color: var(--primary-color);
+  font-size: 87px;
+  font-weight: bold;
+}
+
+#suggested-cities {
+  margin-bottom: 2rem;
+  border: 3px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+
+.suggested-cities {
+  font-size: 44px;
+  color: var(--primary-color);
+  padding: 5px 0;
+  margin-bottom: 5px;
+
+}
+
+.suggested-cities-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+}
+
+
+
+.suggested-cities button {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: .4s all ease-out;
+  color: #000;
+}
+
+
+.suggested-cities button:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+  color: #fff;
+}
+
+
+.manual-city-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output-unit ul input {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: .4s all ease-out;
+  margin-left: 10px;
+  margin-left: 10px;
+
+}
+
+.output-unit ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.input .weather-search {
+  display: inline-block;
+  margin-right: -10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+
+.input .weather-submit {
+    display: inline-block;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+    transition: .4s all ease;
+}
+
+.input .weather-submit:hover {
+  transform: scale(1.1)
+}
+
+
+
+

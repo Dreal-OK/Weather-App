@@ -1,0 +1,44 @@
+<main class="container">
+  <div class="container-fluid">
+    <%- include('./partials/header')  %>
+    <section id="suggested-cities">
+      <div class="suggested-cities">
+        <h2 class="text-center h2">Suggested Cities</h2>
+        <div class="suggested-cities-container">
+          <% cities.forEach(city => { %>
+          <button type="button" value="<% city %> "><%= city %></button>
+          <% }) %>
+        </div>
+      </div>
+
+      <form action="/" method="POST">
+        <div class="manual-city-input">
+          <div class="output-unit">
+            <ul>
+              <li class="unit"> <input type="radio" name="unit" id="metric"><label for="metric">Metric</label></li>
+              <li class="unit"><input type="radio" name="unit" id="celcius"><label for="celcius">Celcius</label>
+              </li>
+              <li class="unit"><input type="radio" name="unit" id="fahrenheit"><label
+                  for="fahrenheit">Fahrenheit</label></li>
+            </ul>
+          </div>
+          <div class="input">
+            <input type="text" class="weather-search" placeholder="Search City" class="city-name">
+            <button type="submit" class="weather-submit" class="d- inline-block ">Search</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <section id="weather-board container-fluid ">
+      <div class="card-container">
+        <% cities.forEach(city => {%>
+        <div class="card-item col">
+          <h3 class="text-center"><%= city %></h3 class="text-center">
+        </div>
+        <% }) %>
+      </div>
+    </section>
+  </div>
+</main>
