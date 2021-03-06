@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const https = require("https");
 const randomCities = require("all-the-cities");
 const { static, response } = require("express");
-const { indexOf } = require("lodash");
+const { indexOf, lastIndexOf } = require("lodash");
 
 //Components
 const cities = [];
@@ -17,7 +17,7 @@ const port = 3000;
 const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(static('public'))
+app.use(static("public"));
 
 app.get("/", (req, res) => {
   for (let i = 0; i < 8; i++) {
@@ -25,17 +25,21 @@ app.get("/", (req, res) => {
     cities[i] = _.upperCase(randomCities[randomIndex].name);
   }
 
-  cities.forEach(city => {
+  cities.forEach((city) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    https.get(url, response =>{
-      response.on('data', data => {
+
+    https.get(url, (response) => {
+      let status = response.statusCode;
+      response.on("data", (data) => {
         let weatherData = JSON.parse(data);
-        console.log(city);
-        cardComponents[indexOf(city)] = weatherData.weather[0];
+        // let cityWeather = weatherData.weather[0]
+        cardComponents.push(status)
         console.log(cardComponents);
       });
     });
   });
+
+  // console.log(cardComponents);
 
   res.render("home", {
     cities: cities,
