@@ -113,5 +113,22 @@ body {
 }
 
 
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
 
+.card-item {
+  box-shadow: 5px 5px 10px rgb(148, 75, 233);
+  border-radius: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
